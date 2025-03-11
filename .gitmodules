@@ -1,0 +1,3 @@
+[submodule "cryptoart-smart-contract/lib/openzeppelin-contracts"]
+	path = cryptoart-smart-contract/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
