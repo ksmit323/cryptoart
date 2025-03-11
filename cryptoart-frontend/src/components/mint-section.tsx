@@ -16,24 +16,24 @@ export default function MintSection() {
   const nfts = [
     {
       id: 1,
-      name: "Cosmic Dreamer",
+      name: "Trenchcoat guy",
       artist: "Digital Visionary",
       price: "0.05 ETH",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/art_1.webp?height=400&width=400",
     },
     {
       id: 2,
-      name: "Neural Nexus",
+      name: "Trippy Digital Galaxy",
       artist: "Crypto Creator",
       price: "0.08 ETH",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/art_2.webp?height=400&width=400",
     },
     {
       id: 3,
-      name: "Ethereal Essence",
+      name: "If the Matrix had Bitcoin",
       artist: "Blockchain Artisan",
       price: "0.12 ETH",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/art_3.webp?height=400&width=400",
     },
   ]
 
