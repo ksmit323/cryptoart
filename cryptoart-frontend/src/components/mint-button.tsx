@@ -6,23 +6,28 @@ import { useWallet } from "@/hooks/use-wallet"
 import { Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useToast } from "@/hooks/use-toast"
+import { ethers } from "ethers"
+import contractABI from '../../abi/contractABI.json' 
 
 interface MintButtonProps {
   nftData: {
     id: number
     name: string
     price: string
+    metadataURI?: string // Add this if you have it available
   }
   onSuccess?: () => void
   className?: string
 }
+
+const contractAddress = "0xA4ab6E67D044cB1172960E46775346F7491Ce971"
 
 export default function MintButton({ nftData, onSuccess, className }: MintButtonProps) {
   const { isConnected, connect } = useWallet()
   const [isMinting, setIsMinting] = useState(false)
   const { toast } = useToast()
 
-  // Simulated minting function
+  // Mint NFT function using mintForArtist
   const mintNft = async () => {
     if (!isConnected) {
       toast({
@@ -37,33 +42,59 @@ export default function MintButton({ nftData, onSuccess, className }: MintButton
     setIsMinting(true)
 
     try {
-      // Simulate blockchain interaction
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      if (!window.ethereum) {
+        throw new Error("No Ethereum wallet detected. Please install MetaMask or another compatible wallet")
+      }
 
-      // This is where you would call your actual smart contract
-      // Example with ethers.js (commented out as it's just a placeholder):
-      /*
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+      // Setup ethers with provider and contract
+      const provider = new ethers.BrowserProvider(window.ethereum as any)
+      const signer = await provider.getSigner()
+      const contract = new ethers.Contract(contractAddress, contractABI, signer)
       
-      // Convert price from ETH to Wei
-      const priceInWei = ethers.utils.parseEther(nftData.price.split(' ')[0]);
+      // Get the user's address
+      const userAddress = await signer.getAddress()
       
-      // Call the mint function on the smart contract
-      const tx = await contract.mint(nftData.id, { value: priceInWei });
-      await tx.wait();
-      */
-
+      // Generate metadata URI if not provided
+      const metadataURI = nftData.metadataURI || `https://yourapi.com/metadata/${nftData.id}`
+      
+      // Call mintForArtist function
+      console.log("Minting with parameters:", {
+        to: userAddress,
+        editionName: nftData.name,
+        artPieceId: nftData.id.toString(),
+        metadataURI
+      })
+      
+      const tx = await contract.mintForArtist(
+        userAddress,
+        nftData.name,
+        nftData.id.toString(),
+        metadataURI
+      )
+      
+      // Wait for transaction confirmation
+      toast({
+        title: "Transaction submitted",
+        description: "Your NFT is being minted. Please wait for confirmation.",
+      })
+      
+      await tx.wait()
+      
       // Success handling
+      toast({
+        title: "Minting successful!",
+        description: `You've successfully minted "${nftData.name}"`,
+        variant: "default",
+      })
+
       if (onSuccess) {
         onSuccess()
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Minting error:", error)
       toast({
         title: "Minting failed",
-        description: "There was an error while minting your NFT. Please try again.",
+        description: error?.message || "There was an error while minting your NFT. Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -94,4 +125,3 @@ export default function MintButton({ nftData, onSuccess, className }: MintButton
     </Button>
   )
 }
-
