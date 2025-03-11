@@ -15,7 +15,7 @@ interface MintButtonProps {
     name: string
     price: string
     metadataURI?: string 
-  }
+  } 
   onSuccess?: () => void
   className?: string
 }

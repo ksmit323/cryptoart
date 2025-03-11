@@ -62,7 +62,9 @@ export function WalletProvider({ children }: { children: ReactNode }) {
       window.ethereum.on("accountsChanged", handleAccountsChanged)
 
       return () => {
-        window.ethereum.removeListener("accountsChanged", handleAccountsChanged)
+        if (window.ethereum) {
+          window.ethereum.removeListener("accountsChanged", handleAccountsChanged)
+        }
       }
     }
   }, [toast])
