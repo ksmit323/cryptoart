@@ -14,7 +14,7 @@ interface MintButtonProps {
     id: number
     name: string
     price: string
-    metadataURI?: string // Add this if you have it available
+    metadataURI?: string 
   }
   onSuccess?: () => void
   className?: string
