@@ -34,9 +34,9 @@ export default function Header() {
           transition={{ delay: 0.2 }}
           className="flex items-center"
         >
-          <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+          <a href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
             Cryptoart
-          </span>
+          </a>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -46,11 +46,6 @@ export default function Header() {
               <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
                 <a href="#about" className="hover:text-purple-400 transition-colors">
                   About
-                </a>
-              </motion.li>
-              <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-                <a href="#features" className="hover:text-purple-400 transition-colors">
-                  Features
                 </a>
               </motion.li>
               <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>

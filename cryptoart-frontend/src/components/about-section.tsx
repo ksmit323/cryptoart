@@ -70,9 +70,9 @@ export default function AboutSection() {
             <div className="bg-gradient-to-br from-purple-500 to-blue-500 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
               <Palette className="h-7 w-7 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-4 text-white">Artistic Innovation</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Handmade Collector Items</h3>
             <p className="text-gray-400">
-              We empower artists with tools to create unique digital masterpieces that stand out in the NFT marketplace.
+              Each piece is a hand-assembled and numbered limited edition Giclee print.  Sold out editions will never have more created.  Enjoy them, collect them, give them as a gift, or trade them.
             </p>
           </motion.div>
 
@@ -83,10 +83,9 @@ export default function AboutSection() {
             <div className="bg-gradient-to-br from-purple-500 to-blue-500 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
               <Shield className="h-7 w-7 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-4 text-white">Uncompromising Security</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Cold storage for BTC or ETH</h3>
             <p className="text-gray-400">
-              Our platform utilizes cutting-edge blockchain technology to ensure your digital assets remain secure and
-              authentic.
+              Securely store Bitcoin or other digital currencies in physical form.  Beginner friendly, just scan the QR code to load; scan the hidden QR code to unload.  Advanced users can exchange the private keys without damaging the art.
             </p>
           </motion.div>
 
@@ -97,10 +96,9 @@ export default function AboutSection() {
             <div className="bg-gradient-to-br from-purple-500 to-blue-500 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
               <Bitcoin className="h-7 w-7 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-4 text-white">Blockchain Integration</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">You own it!</h3>
             <p className="text-gray-400">
-              Seamlessly connect your wallet and interact with our smart contracts to mint, buy, and sell NFTs with
-              ease.
+              Enjoy exclusive use to the numbered edition you own.  Only you have it, and it can be traded on the blockchain (coming soon).  If you damage it, the same number can be reprinted through our reprint program.
             </p>
           </motion.div>
         </motion.div>

@@ -48,7 +48,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Where Art Meets Blockchain
+            CryptoArt
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl mb-10 text-gray-300"
@@ -56,7 +56,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Secure, innovative, and elegant digital art platform powered by blockchain technology
+            Art for the Crypto Culture
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,13 +66,10 @@ export default function HeroSection() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 cursor-pointer"
               onClick={scrollToMint}
             >
               Mint NFT
-            </Button>
-            <Button size="lg" variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10">
-              Explore Gallery
             </Button>
           </motion.div>
         </div>

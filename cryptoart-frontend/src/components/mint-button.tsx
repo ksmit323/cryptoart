@@ -55,7 +55,7 @@ export default function MintButton({ nftData, onSuccess, className }: MintButton
       const userAddress = await signer.getAddress()
       
       // Generate metadata URI if not provided
-      const metadataURI = nftData.metadataURI || `https://yourapi.com/metadata/${nftData.id}`
+      const metadataURI = nftData.metadataURI || `https://example.com/metadata/${nftData.id}`
       
       // Call mintForArtist function
       console.log("Minting with parameters:", {
@@ -108,7 +108,7 @@ export default function MintButton({ nftData, onSuccess, className }: MintButton
       disabled={isMinting}
       size="lg"
       className={cn(
-        "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0",
+        "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 cursor-pointer",
         className,
       )}
     >

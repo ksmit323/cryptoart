@@ -28,8 +28,8 @@ export default function WalletButton({ className }: WalletButtonProps) {
       variant={isConnected ? "outline" : "default"}
       className={cn(
         isConnected
-          ? "border-purple-500 text-purple-400 hover:bg-purple-500/10"
-          : "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0",
+          ? "border-purple-500 text-purple-400 hover:bg-purple-500/10 hover:text-white cursor-pointer"
+          : "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 cursor-pointer",
         className,
       )}
       disabled={isConnecting}

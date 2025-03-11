@@ -57,11 +57,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#features" className="text-gray-400 hover:text-purple-400 transition-colors">
-                  Features
-                </a>
-              </li>
-              <li>
                 <a href="#mint" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Mint NFT
                 </a>
@@ -76,9 +71,8 @@ export default function Footer() {
           >
             <h4 className="text-white font-bold mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">info@cryptoart.com</li>
-              <li className="text-gray-400">+1 (555) 123-4567</li>
-              <li className="text-gray-400">123 Blockchain Ave, Digital City</li>
+              <li className="text-gray-400">example@cryptoart.com</li>
+              <li className="text-gray-400">Big State of Texas</li>
             </ul>
           </motion.div>
         </div>
